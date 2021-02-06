@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+.f-col{
+  flex-direction: column;
+}
+.f-grow-1 {
+  flex-grow: 1;
+  padding: 3%;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./images/background/edit.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-color: black;
+}
+
+.review {
+  display: flex;
+  min-width: 100vw;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+input {
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  color: white;
+}
+
+datalist {
+  background-color: transparent;
+}
+
+::placeholder {
+  color: whitesmoke;
+}
+
+.reviews{
+  background-color: #0077be;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button.post-review {
+  padding: 1.4%;
+  background-color: transparent;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+}

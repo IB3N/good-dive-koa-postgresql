@@ -11,23 +11,55 @@
   <!-- Link to my favicon -->
   <link rel="shortcut icon" href="./images/layout/favicon.ico">
 
-  
 
 </head>
 <body
+  <div class="wrapper">                             <!-- START OF MAIN WRAPPER -->
 
-  <h1>Good Dive?</h1>
-  <div class="wrapper">             <!-- START OF MAIN WRAPPER -->
-    <div class="page-header">        <!-- START OF PAGE HEADER -->
+    <header class="page-header">                    <!-- START OF PAGE HEADER -->
+      <h1>Did you have a Good Dive?</h1>
+      <div class="review">
+        <div class="dive-site flex f-col f-grow-1">
+          <label for="diveSite"><h3>Dive site name</h3></label>
+          <input type="text" id="diveSite" placeholder="site name...">
+        </div>
 
-    </div>                          <!-- END OF PAGE HEADER -->
+        <div class="rating flex f-col f-grow-1">
+          <label for="rating"><h3>Out of 5...</h3></label>
+          <input list="ratingOptions" id="rating" placeholder="rating...">
+          <datalist id="ratingOptions">
+            <option value="1">
+            <option value="2">
+            <option value="3">
+            <option value="4">
+            <option value="5">
+          </datalist>
+        </div>
 
-    <div class="reviews">           <!-- START OF REVIEWS -->
+        <div class="content flex f-col f-grow-1">
+          <label for="content"><h3>How was your dive?</h3></label>
+          <input type="text" id="content" placeholder="good dive?">
+        </div>
 
-    </div>                          <!-- END OF REVIEWS -->
+      </div>
+      <button class="post-review f-col" id="postReview">Surface review</button>
+    </header>                                       <!-- END OF PAGE HEADER -->
 
-  </div>                            <!-- END OF MAIN WRAPPER -->
+    <main class="reviews" id="reviewsContainer">                          <!-- START OF REVIEWS -->
+      <div class="rev">
+        <h1>DIVE SITE</h1>
+        <p>4 / 5</p>
+        <p>This is going to be a dive site review, it will have lots of text and all sorts of interesting comments from people</p>
+      </div>
+    </main>                                         <!-- END OF REVIEWS -->
 
+    <footer>                                        <!-- START OF FOOTER-->
+        <p>Made by Ben Pearce 2021</p>
+    </footer>                                       <!-- END OF FOOTER-->
+
+  </div>                                            <!-- END OF MAIN WRAPPER -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="styles.css"></script>
 </body>
 </html>
