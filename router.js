@@ -3,9 +3,9 @@
 const Router = require('koa-router');
 const router = new Router();
 
-// const reviewController = require('./controllers/reviews-model');
+const { getReviews, postReview } = require('./controllers/reviews');
 
-router.get('/reviews');
-router.post('/reviews');
+router.get('/reviews', getReviews);
+router.post('/reviews', postReview);
 
 module.exports = router;

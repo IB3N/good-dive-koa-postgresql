@@ -1,8 +1,8 @@
 'use strict';
 
 class Review {
-  constructor (site, rating, content) {
-    this.site = site;
+  constructor (sitename, rating, content) {
+    this.sitename = sitename;
     this.rating = rating;
     this.content = content;
   }
@@ -29,14 +29,13 @@ function pretty (time) {
 }
 
 function addReviewToPage (review) {
-  const {site, rating, content, time} = review;
+  const {sitename, rating, content} = review;
 
   const $HTMLReview = $(`
     <div class="rev">
-      <h1>${site}</h1>
+      <h1>${sitename}</h1>
       <p>${rating} / 5</p>
       <p>${content}</p>
-      <p>${pretty(time)}<p>
     </div>
   `);
 
@@ -53,21 +52,21 @@ $(() => {
   $('#postReview').on('click',(e) => {
     e.preventDefault();
 
-    const site = $('#diveSite').val();
+    const sitename = $('#diveSite').val();
     const rating = $('#rating').val();
     const content = $('#content').val();
 
-    if (site && rating && content) {
+    if (sitename && rating && content) {
       $('#diveSite').val('');
       $('#rating').val('');
       $('#content').val('');
 
-      const review = new Review(site, rating, content, Date.now());
+      const review = new Review(sitename, rating, content);
       insertReviewIntoDB(review);
       addReviewToPage(review);
     }
     else {
-      if (!site) console.error('no site 🥺');
+      if (!sitename) console.error('no site name 🥺');
       if (!rating) console.error('no rating 🥺');
       if (!content) console.error('no review 🥺');
     }

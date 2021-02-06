@@ -8,7 +8,7 @@ const morgan = require('koa-morgan');
 const router = require('./router');
 const app = new Koa();
 
-app.use(morgan('dev');
+app.use(morgan('dev'));
 app.use(serve('./static/app'));
 app.use(bodyparser());
 app.use(router.routes());
